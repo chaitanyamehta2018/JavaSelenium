@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
- */
+
 
 import com.ats.javaselenium.JavaSelenium;
 import org.junit.jupiter.api.AfterEach;
@@ -10,11 +7,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
-/**
- *
- * @author HerryPotter
- */
+
 public class VerifyOpeningBrowserTest {
     
     public VerifyOpeningBrowserTest() {
@@ -40,12 +39,28 @@ public class VerifyOpeningBrowserTest {
      * Test of main method, of class JavaSelenium.
      */
     @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        JavaSelenium.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testMain() throws InterruptedException 
+    {
+        
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-blink-features=AutomationControlled");
+        
+        WebDriver driver = new ChromeDriver(options);
+        
+        driver.get("http://www.google.com");
+        
+        driver.manage().window().maximize();
+        
+        WebElement element = driver.findElement(By.name("q"));
+        
+        element.sendKeys("Sky Force Movie Trailer");
+        
+        element.submit();
+                
+        Thread.sleep(5000);
+        
+        driver.quit();
+        
     }
     
 }
