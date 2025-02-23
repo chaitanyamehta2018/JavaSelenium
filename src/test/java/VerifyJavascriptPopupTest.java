@@ -36,7 +36,7 @@ public class VerifyJavascriptPopupTest {
             */
             
             
-            FluentWait<WebDriver> fluentWait = new FluentWait<>(driver)
+            FluentWait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
                     .withTimeout(Duration.ofSeconds(2)) // Maximum wait time
                     .pollingEvery(Duration.ofSeconds(1)) // Retry every 1 seconds
                     .ignoring(Exception.class); // Ignore minor errors like StaleElementReferenceException
@@ -85,8 +85,6 @@ public class VerifyJavascriptPopupTest {
             assertEquals("You entered: My Name is Lakhan",driver.findElement(By.id("result")).getText(),"Incorrect result text");
 
             
-            
-            Thread.sleep(5000);
         } 
         finally {
             if (driver != null) {
