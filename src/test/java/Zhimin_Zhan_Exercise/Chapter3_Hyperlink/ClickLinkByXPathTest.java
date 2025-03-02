@@ -1,10 +1,8 @@
 package Zhimin_Zhan_Exercise.Chapter3_Hyperlink;
 
-import XPath.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,13 +23,13 @@ public class ClickLinkByXPathTest {
             options.addArguments("--disable-blink-features=AutomationControlled");
 
             driver = new ChromeDriver(options);
-            driver.get("https://www.flipkart.com/");
+            driver.get("file:///E:/Softwares/Java/JavaSelenium/src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/same_xpath_links.html");
             driver.manage().window().maximize();
 
-            WebElement element1 = driver.findElement(By.xpath("//input[@title ='Search for Products, Brands and More' and @name ='q']"));
+            WebElement element1 = driver.findElement(By.xpath("//a[@class='same-link'][2]"));
             assertTrue(element1.isDisplayed(), "Element should be displayed");
-            element1.sendKeys("Wrist watch");
-            element1.sendKeys(Keys.ENTER);
+            
+            element1.click();
             
             Thread.sleep(5000);
         } 
