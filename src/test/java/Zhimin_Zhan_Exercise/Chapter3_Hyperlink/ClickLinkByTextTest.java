@@ -1,5 +1,6 @@
 package Zhimin_Zhan_Exercise.Chapter3_Hyperlink;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +27,7 @@ public class ClickLinkByTextTest {
             driver.manage().window().maximize();
 
             WebElement element1 = driver.findElement(By.linkText("Go to Example"));
+            assertTrue(element1.isDisplayed(),"Element should be displayed");
             element1.click();
             
             Thread.sleep(5000);
