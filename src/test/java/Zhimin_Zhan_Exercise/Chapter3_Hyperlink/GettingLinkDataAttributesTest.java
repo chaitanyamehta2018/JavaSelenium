@@ -25,13 +25,22 @@ public class GettingLinkDataAttributesTest {
             options.addArguments("--disable-blink-features=AutomationControlled");
 
             driver = new ChromeDriver(options);
-            driver.get("https://www.flipkart.com/");
+            driver.get("file:///E:/Softwares/Java/JavaSelenium/src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/verify_link_attributes.html");
             driver.manage().window().maximize();
 
-            WebElement element1 = driver.findElement(By.xpath("//input[@title ='Search for Products, Brands and More' and @name ='q']"));
-            assertTrue(element1.isDisplayed(), "Element should be displayed");
-            element1.sendKeys("Wrist watch");
-            element1.sendKeys(Keys.ENTER);
+            WebElement element1 = driver.findElement(By.id("testLink"));
+            
+            
+            var hrefValue =element1.getAttribute("href");
+            assertEquals("https://www.example.com/", hrefValue, "Href attribute does not match");
+
+            var targetValue = element1.getAttribute("target");
+            assertEquals("_blank", targetValue, "Href attribute does not match");            
+
+
+            var linktext = element1.getText();
+            assertEquals("Click Here", linktext, "Href attribute does not match");                   
+           
             
             Thread.sleep(5000);
         } 
