@@ -1,4 +1,4 @@
-package Zhimin_Zhan_Exercise;
+package Zhimin_Zhan_Exercise.Chapter3_Hyperlink;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package Zhimin_Zhan_Exercise;
+package Zhimin_Zhan_Exercise.Chapter3_Hyperlink;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -7,9 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class ClickLinkByIDTest {
+public class ClickLinkByPartialTextTest {
 
-    public ClickLinkByIDTest()
+    public ClickLinkByPartialTextTest()
     {
     }
         
@@ -25,7 +25,7 @@ public class ClickLinkByIDTest {
             driver.get("file:///E:/Softwares/Java/JavaSelenium/src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/ClickLinkByIDTest.html");
             driver.manage().window().maximize();
 
-            WebElement element1 = driver.findElement(By.id("sampleLink"));
+            WebElement element1 = driver.findElement(By.partialLinkText("Go to Exam"));
             element1.click();
             
             Thread.sleep(5000);
