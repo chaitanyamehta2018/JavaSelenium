@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample QA Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .question { margin-bottom: 15px; }
+        .answer { display: none; color: green; font-weight: bold; margin-top: 5px; }
+        a { color: blue; cursor: pointer; text-decoration: underline; }
+    </style>
+    <script>
+        function showAnswer(event, id) {
+            event.preventDefault(); // Prevents unwanted navigation
+            let answerElement = document.getElementById(id);
+            answerElement.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Sample Question & Answer Page</h2>
+
+    <div class="question">
+        <p><b>Question 1:</b> What is 2 + 2?</p>
+        <a href="#" onclick="showAnswer(event, 'ans1')">Show Answer</a>
+        <p id="ans1" class="answer">Answer: 4</p>
+    </div>
+
+    <div class="question">
+        <p><b>Question 2:</b> What is the capital of France?</p>
+        <a href="#" onclick="showAnswer(event, 'ans2')">Show Answer</a>
+        <p id="ans2" class="answer">Answer: Paris</p>
+    </div>
+
+    <div class="question">
+        <p><b>Question 3:</b> Who wrote 'Romeo and Juliet'?</p>
+        <a href="#" onclick="showAnswer(event, 'ans3')">Show Answer</a>
+        <p id="ans3" class="answer">Answer: William Shakespeare</p>
+    </div>
+
+    <div class="question">
+        <p><b>Question 4:</b> What is the square root of 16?</p>
+        <a href="#" onclick="showAnswer(event, 'ans4')">Show Answer</a>
+        <p id="ans4" class="answer">Answer: Magan</p>
+    </div>
+
+    <div class="question">
+        <p><b>Question 5:</b> What is the chemical symbol for water?</p>
+        <a href="#" onclick="showAnswer(event, 'ans5')">Show Answer</a>
+        <p id="ans5" class="answer">Answer: H₂O</p>
+    </div>
+
+    <div class="question">
+        <p><b>Question 6:</b> How many continents are there on Earth?</p>
+        <a href="#" onclick="showAnswer(event, 'ans6')">Show Answer</a>
+        <p id="ans6" class="answer">Answer: 7</p>
+    </div>
+
+    <div class="question">
+        <p><b>Question 7:</b> What is the largest planet in our solar system?</p>
+        <a href="#" onclick="showAnswer(event, 'ans7')">Show Answer</a>
+        <p id="ans7" class="answer">Answer: Jupiter</p>
+    </div>
+
+    <div class="question">
+        <p><b>Question 8:</b> What is the speed of light?</p>
+        <a href="#" onclick="showAnswer(event, 'ans8')">Show Answer</a>
+        <p id="ans8" class="answer">Answer: 299,792,458</p>
+    </div>
+
+</body>
+</html>
