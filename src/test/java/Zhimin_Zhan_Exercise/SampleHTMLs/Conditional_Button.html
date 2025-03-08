@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Button</title>
+    <script>
+        function checkInput() {
+            var inputText = document.getElementById("textInput").value;
+            var button = document.getElementById("submitButton");
+
+            // Enable button only if text is entered
+            button.disabled = inputText.trim() === "";
+        }
+
+        function showMessage() {
+            var inputText = document.getElementById("textInput").value;
+            alert("You entered: " + inputText);
+        }
+    </script>
+</head>
+<body>
+
+    <label for="textInput">Enter text:</label>
+    <input type="text" id="textInput" onkeyup="checkInput()">
+    
+    <button id="submitButton" onclick="showMessage()" disabled>Submit</button>
+
+</body>
+</html>
