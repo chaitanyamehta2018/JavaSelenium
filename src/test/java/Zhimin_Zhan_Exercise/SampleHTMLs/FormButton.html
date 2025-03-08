@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button and Input Field</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            width: 200px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Button with Input Field</h2>
+    
+    <input type="text" id="textInput" placeholder="Enter text here">
+    <button id="submitButton">Click Me</button>
+
+    <p id="output"></p>
+
+    <script>
+        document.getElementById("submitButton").addEventListener("click", function() {
+            let inputText = document.getElementById("textInput").value;
+            document.getElementById("output").innerText = "You entered: " + inputText;
+        });
+    </script>
+
+</body>
+</html>
