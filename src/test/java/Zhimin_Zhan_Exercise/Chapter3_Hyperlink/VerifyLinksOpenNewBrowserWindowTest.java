@@ -39,7 +39,7 @@ public class VerifyLinksOpenNewBrowserWindowTest {
             // Validate we are back on the original page
             assertEquals(currentUrl, driver.getCurrentUrl(), "Should return to original page");
 
-            Thread.sleep(4000);
+            Thread.sleep(6000);
         } 
         finally {
             if (driver != null) {
