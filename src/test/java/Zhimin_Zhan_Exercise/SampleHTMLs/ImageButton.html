@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Button Example</title>
+    <script>
+        function showText() {
+            var inputText = document.getElementById("textInput").value;
+            document.getElementById("output").innerText = "You entered: " + inputText;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Image Button Example</h2>
+
+    <!-- Input Text Field -->
+    <label for="textInput">Enter text:</label>
+    <input type="text" id="textInput" placeholder="Type something here...">
+
+    <!-- Image Button Identified by 'src' Attribute -->
+    <button id="imgButton" onclick="showText()" style="border: none; background: none;">
+        <img src="button_image.png" alt="Submit" width="100" height="50">
+    </button>
+
+    <!-- Output Display -->
+    <p id="output" style="font-weight: bold; color: blue;"></p>
+
+</body>
+</html>
