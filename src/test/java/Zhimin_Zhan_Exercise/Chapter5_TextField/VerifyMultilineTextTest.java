@@ -1,5 +1,6 @@
 package Zhimin_Zhan_Exercise.Chapter5_TextField;
 
+import java.io.File;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -23,7 +24,11 @@ public class VerifyMultilineTextTest {
             options.addArguments("--disable-blink-features=AutomationControlled");
 
             driver = new ChromeDriver(options);
-            driver.get("file:///E:/Softwares/Java/JavaSelenium/src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/MultilineTextEntry.html");
+            
+            File file = new File("src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/MultilineTextEntry.html");
+            String filePath = file.getAbsolutePath();
+            driver.get("file:///" + filePath.replace("\\", "/"));
+            
             driver.manage().window().maximize();
             
             
