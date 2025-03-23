@@ -1,5 +1,6 @@
 package Zhimin_Zhan_Exercise.Chapter3_Hyperlink;
 
+import java.io.File;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.openqa.selenium.By;
@@ -23,7 +24,9 @@ public class ClickLinkByXPathTest {
             options.addArguments("--disable-blink-features=AutomationControlled");
 
             driver = new ChromeDriver(options);
-            driver.get("file:///E:/Softwares/Java/JavaSelenium/src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/same_xpath_links.html");
+            File file = new File("src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/same_xpath_links.html");
+            String filePath = file.getAbsolutePath();
+            driver.get("file:///" + filePath.replace("\\", "/"));             
             driver.manage().window().maximize();
 
             WebElement element1 = driver.findElement(By.xpath("//a[@class='same-link'][2]"));
