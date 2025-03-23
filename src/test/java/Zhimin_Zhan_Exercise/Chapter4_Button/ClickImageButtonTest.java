@@ -1,5 +1,6 @@
 package Zhimin_Zhan_Exercise.Chapter4_Button;
 
+import java.io.File;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -23,7 +24,9 @@ public class ClickImageButtonTest {
             options.addArguments("--disable-blink-features=AutomationControlled");
 
             driver = new ChromeDriver(options);
-            driver.get("file:///E:/Softwares/Java/JavaSelenium/src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/ImageButton.html");
+            File file = new File("src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/ImageButton.html");
+            String filePath = file.getAbsolutePath();
+            driver.get("file:///" + filePath.replace("\\", "/"));             
             driver.manage().window().maximize();
 
             WebElement element1 = driver.findElement(By.xpath("//img[@src='button_image.png']"));
