@@ -1,5 +1,6 @@
 package Zhimin_Zhan_Exercise.Chapter3_Hyperlink;
 
+import java.io.File;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +23,9 @@ public class ClickLinkByPartialTextTest {
             options.addArguments("--disable-blink-features=AutomationControlled");
 
             driver = new ChromeDriver(options);
-            driver.get("file:///E:/Softwares/Java/JavaSelenium/src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/ClickLinkByIDTest.html");
+            File file = new File("src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/ClickLinkByIDTest.html");
+            String filePath = file.getAbsolutePath();
+            driver.get("file:///" + filePath.replace("\\", "/"));               
             driver.manage().window().maximize();
 
             WebElement element1 = driver.findElement(By.partialLinkText("Go to Exam"));
