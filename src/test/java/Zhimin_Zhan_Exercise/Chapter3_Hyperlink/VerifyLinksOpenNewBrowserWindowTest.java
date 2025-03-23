@@ -1,5 +1,6 @@
 package Zhimin_Zhan_Exercise.Chapter3_Hyperlink;
 
+import java.io.File;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -18,7 +19,9 @@ public class VerifyLinksOpenNewBrowserWindowTest {
             options.addArguments("--disable-blink-features=AutomationControlled");
 
             driver = new ChromeDriver(options);
-            driver.get("file:///E:/Softwares/Java/JavaSelenium/src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/OpenTestPage.html");
+            File file = new File("src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/OpenTestPage.html");
+            String filePath = file.getAbsolutePath();
+            driver.get("file:///" + filePath.replace("\\", "/"));             
             driver.manage().window().maximize();
 
             // Step 1: Store the current page URL
