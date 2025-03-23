@@ -1,5 +1,6 @@
 package Zhimin_Zhan_Exercise.Chapter4_Button;
 
+import java.io.File;
 import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
@@ -27,7 +28,9 @@ public class JavaScriptButtonWithAlertTest {
             options.addArguments("--disable-blink-features=AutomationControlled");
 
             driver = new ChromeDriver(options);
-            driver.get("file:///E:/Softwares/Java/JavaSelenium/src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/ButtonViaJavaScript.html");
+            File file = new File("src/test/java/Zhimin_Zhan_Exercise/SampleHTMLs/ButtonViaJavaScript.html");
+            String filePath = file.getAbsolutePath();
+            driver.get("file:///" + filePath.replace("\\", "/")); 
             driver.manage().window().maximize();
             
             //Created Explicit wait of 5 seconds
