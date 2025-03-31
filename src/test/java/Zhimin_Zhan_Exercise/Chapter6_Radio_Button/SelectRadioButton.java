@@ -39,6 +39,7 @@ public class SelectRadioButton {
              Thread.sleep(2000);
              assertFalse(radioButton.isSelected(), "Radiobutton should NOT be enabled");
              
+             //click on the radio button
              radioButton.click();
              
              Thread.sleep(2000);
