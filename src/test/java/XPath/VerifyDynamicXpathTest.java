@@ -24,6 +24,7 @@ public class VerifyDynamicXpathTest {
             options.addArguments("--disable-blink-features=AutomationControlled");
 
             driver = new ChromeDriver(options);
+            //open the URL
             driver.get("https://www.flipkart.com/");
             driver.manage().window().maximize();
 
