@@ -50,6 +50,7 @@ public class VerifyPageTitleTest {
         
         WebElement element = driver.findElement(By.name("q"));
         
+        //Enter texts in to the searchbox
         element.sendKeys("Sky Force Movie Trailer");
         
         var title = driver.getTitle();
